@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Checkout</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="/">🏥 MedCare</a>
+
+        <div>
+            <a class="nav-link d-inline text-white" href="/hospitals">Hospitals</a>
+            <a class="nav-link d-inline text-white" href="/checkout">
+                Cart ({{ cart_count }})
+            </a>
+        </div>
+    </div>
+</nav>
+
+<div class="container mt-5">
+
+    <h2>Your Bookings</h2>
+
+    {% for item in items %}
+    <div class="card p-3 mb-2">
+        <b>{{ item['patient_name'] }}</b> ({{ item['age'] }}, {{ item['gender'] }})<br>
+        {{ item['doctor_name'] }} - {{ item['time'] }}<br>
+        ₹200
+    </div>
+    {% endfor %}
+
+    <h4>Total: ₹{{ total }}</h4>
+
+    <a href="/payment" class="btn btn-success mt-3">
+        Proceed to Payment
+    </a>
+
+</div>
+
+</body>
+</html>

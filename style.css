@@ -1,0 +1,33 @@
+/* Background Gradient */
+body {
+    background: linear-gradient(to right, #e3f2fd, #ffffff);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Heading Style */
+h1, h2 {
+    color: #0d6efd;
+    font-weight: bold;
+}
+
+/* Card Styling */
+.card {
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    transition: transform 0.2s;
+}
+
+.card:hover {
+    transform: scale(1.03);
+}
+
+/* Buttons */
+.btn {
+    border-radius: 8px;
+    padding: 8px 15px;
+}
+
+/* Container spacing */
+.container {
+    padding-top: 30px;
+}
